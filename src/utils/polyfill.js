@@ -4,6 +4,7 @@ globalOrWindow.__CLIENT__ = !globalOrWindow.__SERVER__;
 if (typeof __DEV__ === 'undefined' && !globalOrWindow.__DEV__) {
   globalOrWindow.__DEV__ = false;
 }
+// globalOrWindow.__WEBVIEW__ = !globalOrWindow.__SERVER__;
 // if (!globalOrWindow.__STAGE__ && !globalOrWindow.__STAGE__) {
 //   globalOrWindow.__STAGE__ = 'stage';
 // }

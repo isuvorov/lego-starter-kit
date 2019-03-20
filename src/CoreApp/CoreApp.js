@@ -91,7 +91,7 @@ export default class CoreApp extends ExpressApp {
     return require('./middlewares').default(this); // eslint-disable-line
   }
   getMongooseModels() {
-    console.log('getMongooseModels', Object.keys(this.modules));
+    // console.log('getMongooseModels', Object.keys(this.modules));
     const models = this.getModels();
 
 
@@ -102,7 +102,7 @@ export default class CoreApp extends ExpressApp {
       } else if (mdl.models) {
         models2 = mdl.models;
       }
-      console.log('models2', Object.keys(models2));
+      // console.log('models2', Object.keys(models2));
 
 
       forEach(models2, (model, modelName) => {
@@ -113,15 +113,9 @@ export default class CoreApp extends ExpressApp {
         models[modelName] = models2[modelName];
       });
     });
-    console.log('models', Object.keys(models));
+    // console.log('models', Object.keys(models));
 
     return mapValues(models, (model, modelName) => {
-      console.log('modelName', modelName);
-      if (modelName === 'PermitModel') {
-        console.log('model', model);
-        console.log('model._universal', model._universal);
-        
-      }
       if (model._universal) {
         return model.getMongooseModel(this.db);
       }

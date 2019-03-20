@@ -307,17 +307,8 @@ export default class Uapp extends Core {
     const req = Api.createReq(reqParams);
     this.emit('resolve:before', { req, reqParams });
     __CLIENT__ && __DEV__ && this.log.trace('Uapp.resolve', req.path, req.query);
-    // this.log.trace('resolve1', req.path, req.query);
-    // this.log.trace({r:'resolve2'});
-    // this.log.trace('resolve3', 'some');
-    // __DEV__ && console.log('Uapp.resolve', req);
     await this.resetPage();
-    // console.log('page $$$$', this.page);
-    // console.log('this.router.resolve');
-    console.log(13112312);
-    
     try {
-      // console.log('Uapp.router.resolve');
       await this.router.resolve({
         pathname: reqParams.path,
         path: reqParams.path,
@@ -329,7 +320,6 @@ export default class Uapp extends Core {
       console.error('uapp.router.resolve err', err); //eslint-disable-line
       this.log.error('resolveErr', err);
     }
-    console.log(13112312);
     this.emit('resolve:after', { req, reqParams });
   }
 

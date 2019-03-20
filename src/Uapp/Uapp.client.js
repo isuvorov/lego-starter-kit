@@ -18,7 +18,6 @@ export default class Uapp extends BaseUapp {
     });
 
     this.on('resolve:before', () => {
-      // console.log('resolve:beforeresolve:beforeresolve:beforeresolve:before');
       if (this.progress && this.progress.current) {
         this.progress.current.start();
       }
