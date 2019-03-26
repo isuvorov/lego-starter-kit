@@ -62,12 +62,6 @@ export default class Uapp extends Core {
         getLocale: this.getLocale,
       }).init();
     }
-    if (__CLIENT__) {
-      const classes = detectHtmlClasses();
-      classes.forEach(addClassToHtml);
-      removeClassFromHtml('ua_js_no');
-      addClassToHtml('ua_js_yes');
-    }
   }
 
   getApi() {
@@ -112,6 +106,12 @@ export default class Uapp extends Core {
       context,
     });
     await this.lazyRun();
+    if (__CLIENT__) {
+      const classes = detectHtmlClasses();
+      classes.forEach(addClassToHtml);
+      removeClassFromHtml('ua_js_no');
+      addClassToHtml('ua_js_yes');
+    }
   }
 
 
