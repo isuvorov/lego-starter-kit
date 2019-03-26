@@ -11,7 +11,7 @@ import detectHtmlClasses from '@lskjs/general/utils/detectHtmlClasses';
 import addClassToHtml from '@lskjs/general/utils/addClassToHtml';
 import removeClassFromHtml from '@lskjs/general/utils/removeClassFromHtml';
 import Root from '@lskjs/general/Root';
-import I18 from '@lskjs/i18/I18';
+import I18 from '@lskjs/i18';
 import logger from '../Core/logger';
 
 import Core from '../Core';

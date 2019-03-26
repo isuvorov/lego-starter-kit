@@ -7,7 +7,7 @@ import map from 'lodash/map';
 import Api from 'apiquery';
 import staticFileMiddleware from 'connect-static-file';
 import autobind from 'core-decorators/lib/autobind';
-import I18 from '@lskjs/i18/I18';
+import I18 from '@lskjs/i18';
 import db from '@lskjs/db/server';
 
 import ExpressApp from '../ExpressApp';
