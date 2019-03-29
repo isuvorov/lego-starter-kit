@@ -97,6 +97,10 @@ export default class Uapp extends Core {
     return require('./stores').default();
   }
 
+  async started() {
+    super.started();
+    console.log('STARTED');
+  }
   async run() {
     await super.run();
     const context = this.provide();
@@ -107,10 +111,13 @@ export default class Uapp extends Core {
     });
     await this.lazyRun();
     if (__CLIENT__) {
-      const classes = detectHtmlClasses();
-      classes.forEach(addClassToHtml);
-      removeClassFromHtml('ua_js_no');
-      addClassToHtml('ua_js_yes');
+      console.log('RUNNED');
+      setTimeout(() => {
+        const classes = detectHtmlClasses();
+        classes.forEach(addClassToHtml);
+        removeClassFromHtml('ua_js_no');
+        addClassToHtml('ua_js_yes');
+      }, 100);
     }
   }
 
