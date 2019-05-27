@@ -1,6 +1,6 @@
 {
   "name": "lego-starter-kit",
-  "version": "1.25.37",
+  "version": "1.25.38",
   "engines": {
     "node": ">=6.13.1",
     "npm": ">=3.10.10"
