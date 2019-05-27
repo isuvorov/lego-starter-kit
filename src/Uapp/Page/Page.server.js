@@ -14,19 +14,20 @@ ${meta.image ? `<meta property="og:image" content="${meta.image}" />` : ''}
 `;
   }
 
-  renderFavicon = require('./renderFavicon').default
-
+  // renderFavicon = require('./renderFavicon').default
   getRootState() {
     return this.uapp.rootState;
   }
 
   renderHead() {
+    const renderFavicon = this.renderFavicon || require('./renderFavicon').default;
+    // console.log('renderFavicon', this.renderFavicon);
     const js = this.renderJS();
     return `\
 <title>${this.renderTitle()}</title>
 ${this.renderMeta()}
 ${this.renderShims()}
-${this.renderFavicon()}
+${renderFavicon()}
 ${this.renderOGMeta()}
 ${this.renderAssets('css')}
 ${this.renderStyle()}
